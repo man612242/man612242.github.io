@@ -7,31 +7,216 @@
     <title>Document</title>
     <style>
         *{
-            margin: 0px;
+            padding: 0;
+            margin: 0;
         }
-        .top{
-            background-color: #ccc;
+        .header{
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            padding: 6px 10px;
             
         }
-        .card{
-            width: 50%;
-            height: 60px;
-            background-color: black;
-            color: white;
+       .header span{
+        font-size: 40px;
+        margin-top: 12px;
+       }
+       
+        .header nav{
             text-align: center;
-            line-height: 50px;
-            font-size: 20px;
+            width: 100%;
+            font-size: 0;
+            
         }
-        
+        .header a{
+            text-decoration: none;
+            font-size: 16px;
+            color:dimgray ;
+            display: inline-block;
+            line-height: 52px;
+            padding: 10px 30px;
+        }
+        .header  .donate{
+            color: orange;
+            font-size: 14px;
+            text-align: center;
+           width: 140px;
+           height: 50px;
+           border: 2px solid orange;
+        }
+        .header .donate:hover{
+            background-color:cornflowerblue;
+            color: white;
+            border-color: cornflowerblue;
+        }
+        .wrap{
+            background: url(../作業圖片/assets/asset\ 4.jpeg) no-repeat center;
+            height: 600px;
+            
+        }
+        .wrap h2{
+            padding-left: 100px;
+            font-size: 60px;
+        }
+        .wrap h1{
+            padding-left: 100px;
+            font-size: 80px;
+            color: lightskyblue;
+        }
+        .wrap h3{
+            padding-left: 100px;
+            font-size: 25px;
+        }
+        .wrap a{
+           display: flex;  
+           padding: 25px 100px;
+           margin-top: 40px;
+           text-decoration: none;
+           border: 2px solid orange;
+           width: 115px;  
+           color: white;
+           background-color: orange; 
+           
+        }
+        .wrap a:hover{
+            background-color: black;
+            border-color: black;
+        }
+        .item{
+            display: flex;
+        }
+        .list{
+            width: 1200px;
+            margin: auto;
+        }
+        .item .pic{
+            width: 580px;
+            padding: 10px;
+        }
+        .item .pic img{
+            width: 100%;
+        }
+        .item .list{
+            width: 780px;
+            padding: 10px;
+        }
+        .text h1{
+            padding-top: 50px;
+            font-size: 50px;
+        }
+        .text h3{
+            font-size: 30px;
+            padding-top: 15px;
+            color: lightskyblue;
+        }
+        .text p{
+            padding-top: 10px;
+            font-size: 12px;
+            color: darkgrey;
+            padding-bottom: 50px;
+        }
+        .text a{
+            font-size: 12px;
+            color: white;
+            display: flex;
+            text-decoration: none;
+            background-color: orange;
+            text-align: center;
+            width: 110px;
+            height: 30px;
+            padding-left: 30px;
+            padding-top: 15px;
+        }
+        .text a:hover{
+            background-color: black;
+            border-color: black;
+        }
+        .last{
+            background-color: #e7e0e08a;
+            width: 100%;
+            
+        }
+        .last .title{
+            text-align: center;
+        }
+        .last .title h1{
+            font-size: 60px;
+        }
+        .last .title h2{
+            font-size: 35px;
+            color: lightskyblue;
+        }
+        .last .pic{
+            justify-content: center;
+            display: flex;
+            background-size: cover;
+            height: 400px;
+            width: 100%;
+            
+            
+
+        }
+        .volunteer{ 
+
+            background-image:url(../作業圖片/assets/asset\ 5.jpeg) ;
+        }
+        .adopt{
+            margin: 50px;
+            background-image: url(../作業圖片/assets/asset\ 6.jpeg );
+        }
+        .sponsor{
+            background-image: url(../作業圖片/assets/asset\ 7.jpeg );
+        }
     </style>
 </head>
 <body>
-    <div class="top">
-        <div class="card">Toll-free: (123) 456-7890</div>
-        <div class="card"></div>
+    <div class="header">
+        <img src="../作業圖片/assets/asset 0.png" alt="">
+        <span>Anilove</span>
+    <nav>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Events</a>
+        <a href="">News</a>
+        <a href="">Contacts</a>
+    </nav>
+        <a class="donate" href="">DONATE NOW!</a>
     </div> 
+<div class="wrap">
+    <h2>Animals Need</h2>
+    <h1>YOUR Help!</h1>
+    <h3>You can chip in with money & effort</h3>
+    <a  href="">DONATE NOW!</a>
+</div>
+<div class="list">
+    <div class="item">
+        <div class="pic"><img src="../作業圖片/assets/asset 1.jpeg" alt=""></div>
+        <div class="text">
+            <h1>About Us</h1>
+            <h3>What Makes Us Care About Pets</h3>
+            <p>If it wasn’t for our founder’s childhood spent on a ranch in northern Texas, surrounded by<br>domestic animals and pets all the time till she went to college – there might have been no<br>Anilove animal shelter now. So as soon as she graduated with her Veterinary degree 12 years<br> ago, she already knew what she will be doing for a living.</p>
+
+ 
+            <p>
+                All in all, with thousands of animals saved off the streets and cared for every year, we hope to<br> encourage much more pet adoptions to happen!</p>
+                <a href="">LEARN MORE</a>
+        </div>
+    </div>
+</div>
+<div class="last">
+    <div class="title">
+        <h1>How You Can Help</h1>
+        <h2>There Are Countless Ways You Can Join In & Help Us!</h2>
+    </div>
+    <div class="pic">
+        <a class="volunteer" href="">Volunteer</a>
+        <a class="adopt" href="">Adopt</a>
+        <a class="sponsor" href="">Sponsor</a>
+    </div>
+</div>
+
+
+
+
+
+
 </body>
 </html>
