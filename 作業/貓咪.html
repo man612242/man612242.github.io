@@ -45,6 +45,9 @@
             line-height: 52px;
             padding: 10px 30px;
         }
+        .header a:hover{
+            border-bottom: 3px solid orange;
+        }
         .header  .donate{
             color: orange;
             font-size: 14px;
@@ -59,6 +62,7 @@
             border-color: cornflowerblue;
         }
         .wrap{
+            width: 100%;
             background: url(../作業圖片/assets/asset\ 4.jpeg) no-repeat center;
             height: 600px; 
             
@@ -144,6 +148,7 @@
         .last{
             background-color: #e7e0e08a;
             width: 100%;
+            height: 600px;
             
         }
         .last .title{
@@ -160,23 +165,39 @@
             justify-content: center;
             display: flex;
             background-size: cover;
-            height: 400px;
-            width: 100%;
+            text-align: center;
+           vertical-align: bottom;
+        }
+        .last .pic span{
+           font-size: 30px;
+           color: white;
+           
+           
             
-            
-
         }
         .volunteer{ 
-
+            width: 25%;
+            height: 400px;
+            margin: 10px;
             background-image:url(../作業圖片/assets/asset\ 5.jpeg) ;
+            background-size: cover; 
+            text-decoration: none;   
         }
         .adopt{
-            margin: 50px;
+            width: 25%;
+            margin: 10px;
             background-image: url(../作業圖片/assets/asset\ 6.jpeg );
+            background-size: cover;
+            text-decoration: none;
         }
         .sponsor{
+            width: 25%;
+            margin: 10px;
             background-image: url(../作業圖片/assets/asset\ 7.jpeg );
+            background-size: cover;
+            text-decoration: none;
         }
+        
     </style>
 </head>
 <body>
@@ -223,9 +244,9 @@
         <h2>There Are Countless Ways You Can Join In & Help Us!</h2>
     </div>
     <div class="pic">
-        <a class="volunteer" href="">Volunteer</a>
-        <a class="adopt" href="">Adopt</a>
-        <a class="sponsor" href="">Sponsor</a>
+        <a class="volunteer" href=""><span>Volunteer</span></a>
+        <a class="adopt" href=""><span>Adopt</span></a>
+        <a class="sponsor" href=""><span>Sponsor</span></a>
     </div>
 </div>
 
