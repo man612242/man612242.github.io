@@ -5,12 +5,121 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .card{
+            width: 850px;
+            margin: 250px;
+            position: relative;
+        }
+        .color-block{
+            background-color: #eeeeee;
+            width: 400px;
+            height: 250px;
+            position: absolute;
+            z-index: 1;
+        }
+        .control .color-block{
+            top: -70px;
+            right: 50px;
+        }
+        .pic{
+            position: relative;
+            z-index: 2;
+        }
+        .contral .pic{
+            float: right;
+        }
+        .title{
+            width: 350px;
+            color: white;
+            position: absolute;
+            z-index: 3;    
+        }
+        .control .title{
+            top: -100px;
+            left: -180px;
+        }
+        .title .red{
+            background-color: #bb0404;
+            display: flex;
+            align-items: center;
+            
+        }
+        .title .red h3{
+            font-size: 100px;
+            writing-mode: vertical-lr;
+            font-weight: 100;
+        }
+        .title .red h2{
+            font-size: 50px;
+            font-weight: 100;
+        }
+        .title .text{
+            background-color: black;
+            line-height: 30px;
+            padding: 30px;
+        }
+        .list{
+            background-color: #eeeeee;
+            width: 700px;
+            padding: 20px;
+            position: absolute;
+            z-index: 3;
+            
+        }
+        .control .list{
+            left: -180px;
+            top: 380px;
+            
+            
+        }
+        .control .list h3{
+            font-size: 20px;
+            padding-bottom: 20px;
+            color:#bb0404
+        }
+        .control .list h4{
+            background-color: black;
+            color: white;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <article>
-        <section>
-            .title
-        </section>
-    </article>
+    <section>
+        <div class="card">
+            <div class="control">
+                <div class="color-block"></div>
+                <div class="pic"><img src="../作業圖片/toyota/01.png" alt=""></div>
+                <div class="title">
+                    <div class="red">
+                        <h3>01</h3>
+                        <h2>操控樂趣</h2>
+                    </div>
+                    <div class="text">
+                        <h3>人人滿意的駕駛體驗</h3>
+                        <p>透過最佳重量分配,實現平順起步、直線穩定加速,過彎同時保持車身平穩·帶給駕駛更靈敏的道路反饋,享受隨心馳騁的行駛快感·</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <h3>因為我們做了這些革新</h3>
+                    <h4>低重心設計</h4>
+                    <li>透過低重心設計,不僅呈現更低伏的外觀,更能減少車身側傾,保持高速行駛穩定性。</li>
+                    <h4>車體剛性強化</h4>
+                    <li>車身結構採用超高強度鋼材,提高車輛穩定性,同時藉由雷射強化焊接技術,大幅增加 焊點數量,提升車身抗扭剛性,強化駕馭穩定性及安全性。</li>
+                    <h4>四輪獨立懸吊</h4>
+                    <li>搭載全新四輪獨立懸吊設定,透過懸吊的高承載強度,保持輪胎抓地力,同時兼顧轉向 靈敏度與清晰路感回饋,提升駕馭樂趣。</li>
+                </div>
+            </div>
+        </div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </section>
 </body>
 </html>
