@@ -7,22 +7,26 @@
     <title>Document</title>
     <style>
         *{
-            margin: 0;
+            margin:0;
             padding-top: 0;
         }
         article{
+            padding-top: 200px; ;
+            display: flex;
             width:100%; 
-            margin-top: 200px;   
+            margin: auto;
+            
+              
         }
         .control{ 
-            width:100%; 
+            width:100%;      
         }
         .title{
-            width: 335px;
-            position: relative;
-            z-index: 1;
-            top:168px;
-            left: 80px;
+            width: 335px; 
+            position:relative;
+            top: 24%;
+            left: 15%; 
+            z-index: 1;  
         }
         .title-number{
             width: 335px;
@@ -53,10 +57,13 @@
             font-size: 24px;
             padding: 5px;
         }
+        .control .pic{
+            width: 695px;
+            left: 25%;
+            position: relative;
+        }
        
         .control .pic img{
-            display: block;
-            margin: auto;
             width: 695px;    
         }
         
@@ -64,16 +71,14 @@
             background-color: #eeeeee;
             width: 439px;
             height: 290px;
-            position: relative;
-            top: -510px;
-            left: 530px;    
+            position: absolute;
+           
         }
         .list{
             width: 620px;
             background-color: #eeeeee;
-            position: relative;
-            top: -350px;
-            left: 100px;    
+            position: absolute;
+            
         }
         .list h3{
             color: #bb0404;
@@ -89,9 +94,9 @@
     </style>
 </head>
 <body>
-<article>
-    <section  class="control">
-        <div class="title">
+    <article>
+        <section class="control">
+          <div class="title">
             <div class="title-number">
                 <h1>01</h1>
                 <h2>操控樂趣</h2>
@@ -100,19 +105,19 @@
                 <h3>人人滿意的駕駛體驗</h3>
                 <p>透過最佳重量分配,實現平順起 步、直線穩定加速,過彎同時保持 車身平穩·帶給駕駛更靈敏的道路 反饋,享受隨心馳騁的行駛快感·</p>
             </div>
-        </div>
-        <div class="pic"><img src="../作業圖片/toyota/01.png" alt="操控樂趣"></div>
-        <div class="color-block"></div>
-        <div class="list">
-            <h3>因為我們做了這些革新</h3>
-            <h4>低重心設計</h4>
-            <p>透過低重心設計,不僅呈現更低伏的外觀,更能減少車身側傾,保持高速行駛穩定性。</p>
-            <h4>車體剛性強化</h4>
-            <p>車身結構採用超高強度鋼材,提高車輛穩定性,同時藉由雷射強化焊接技術,大幅增加 焊點數量,提升車身抗扭剛性,強化駕馭穩定性及安全性。</p>
-            <h4>四輪獨立懸吊</h4>
-            <p>的高承載強度,保持輪胎抓地力,同時兼顧轉向 靈敏度與清晰路感回饋,提升駕馭樂趣。</p>
-        </div>
-    </section>
-</article>
+          </div>
+            <div class="pic"><img src="../作業圖片/toyota/01.png" alt=""></div>
+            <div class="color-block"></div>
+            <div class="list">
+                <h3>因為我們做了這些革新</h3>
+                <h4>低重心設計</h4>
+                <p>透過低重心設計,不僅呈現更低伏的外觀,更能減少車身側傾,保持高速行駛穩定性。</p>
+                <h4>車體剛性強化</h4>
+                <p>車身結構採用超高強度鋼材,提高車輛穩定性,同時藉由雷射強化焊接技術,大幅增加 焊點數量,提升車身抗扭剛性,強化駕馭穩定性及安全性。</p>
+                <h4>四輪獨立懸吊</h4>
+                <p>的高承載強度,保持輪胎抓地力,同時兼顧轉向 靈敏度與清晰路感回饋,提升駕馭樂趣。</p>
+            </div>
+        </section> 
+    </article>
 </body>
 </html>
