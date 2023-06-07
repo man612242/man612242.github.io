@@ -10,24 +10,26 @@
             margin: 0;
             padding-top: 0;
         }
+        article{
+            width:100%; 
+            margin-top: 200px;   
+        }
         .control{ 
             width:100%; 
-            position: relative;  
         }
         .title{
             width: 335px;
             position: relative;
-            left: 180px;
-            top: 169px;
-            z-index: 1;      
+            z-index: 1;
+            top:168px;
+            left: 80px;
         }
         .title-number{
             width: 335px;
             align-items: center;
             display: flex;
             color: white;
-            background-color: #bb0404;
-            
+            background-color: #bb0404;     
         }
         .title-number h1{
             width: 30%;
@@ -51,11 +53,11 @@
             font-size: 24px;
             padding: 5px;
         }
-        .control .pic{ 
-            margin-left:25%; 
-            width: 695px;
-            position: relative;
-                 
+       
+        .control .pic img{
+            display: block;
+            margin: auto;
+            width: 695px;    
         }
         
         .color-block{
@@ -63,16 +65,15 @@
             width: 439px;
             height: 290px;
             position: relative;
-            
-
+            top: -510px;
+            left: 530px;    
         }
         .list{
             width: 620px;
             background-color: #eeeeee;
             position: relative;
-           top: -350px;
-           left: 200px;
-            
+            top: -350px;
+            left: 100px;    
         }
         .list h3{
             color: #bb0404;
@@ -88,7 +89,8 @@
     </style>
 </head>
 <body>
-    <section class="control">
+<article>
+    <section  class="control">
         <div class="title">
             <div class="title-number">
                 <h1>01</h1>
@@ -111,5 +113,6 @@
             <p>的高承載強度,保持輪胎抓地力,同時兼顧轉向 靈敏度與清晰路感回饋,提升駕馭樂趣。</p>
         </div>
     </section>
+</article>
 </body>
 </html>
