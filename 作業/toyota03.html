@@ -10,20 +10,21 @@
             margin: 0;
             padding: 0;
         }
+
+        .all{
+            width: 100%;
+            margin:400px auto;
+            
+        }
         .card{
-            margin-top:400px ;
-            margin-bottom: 200px;
-            /* position: relative;   */
-            display: flex;
-            justify-content: center;
-        }
-        .odd{
-            width: 600px;
-            position: relative;
-        }
-        .even{
-            width: 600px;
-            position: relative;
+            width: 50%;
+            margin: 100px;
+            /* margin-bottom: 200px; */
+            position: relative;  
+            /* display: flex; */
+            /* justify-content: center; */
+            flex-shrink: 0;
+            padding: 200px;
         }
         .color-block{
             background-color: #eeeeee;
@@ -33,10 +34,11 @@
             z-index: 1;
         }
         .odd .color-block{
-           top: -80px;
-           left: 350px;
+            top: -60px;
+            right:300px;
         }
-        .pic{    
+        .pic{   
+            width: 695px;
             position: relative;
             z-index: 2;        
         }
@@ -48,7 +50,7 @@
         }
         .odd .title{
            top: -100px;
-           left: -160px;
+           left: 170px;
         }
         .title .red{
             background-color: #bb0404;
@@ -77,7 +79,7 @@
             z-index: 3;   
         }
         .odd .list{
-            left: -100px;
+            left: 180px;
             top: 380px;     
         }
         .odd .list h3{
@@ -99,17 +101,17 @@
         }
         .even .title{
             top: -100px;
-            right: -280px;
+            right: 250px;
         }
         .even .color-block{
             width: 500px;
             height: 350px;
-           top: -50px;
-           right: -190px;
+           top: -70px;
+           right: 280px;
         }
         .even .list{
-            right: -280px;
-            bottom: -150px;
+            right: 150px;
+            bottom: -100px;
         }
         .even .list h3{
             font-size: 20px;
@@ -124,16 +126,20 @@
         .even .red{
             flex-direction: row-reverse;
         }
+        .odd .btn{
+            display: flex;
+            align-items: center;
+        }
         
     </style>
 </head>
 <body>
+<div class="all">
     <section>
         <div class="card">
             <div class="odd">
                 <div class="color-block"></div>
-                <div class="pic"><img src="../作業圖片/toyota/01.png" alt=""></div>
-                
+                <div class="pic"><img src="../作業圖片/toyota/01.png" alt=""><img class="btn" src="../作業圖片/toyota/icon.PNG" alt=""></div>
                 <div class="title">
                     <div class="red">
                         <h3>01</h3>
@@ -250,5 +256,6 @@
             </div>
         </div>
     </section>
+</div>
 </body>
 </html>
