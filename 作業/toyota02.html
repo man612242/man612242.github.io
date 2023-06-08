@@ -12,7 +12,9 @@
         }
         .card{
             /* width: 695px; */
-            margin:400px ; 
+            margin-top:200px ;
+            margin-bottom: 200px;
+
             position: relative;  
             display: flex;
             justify-content: center;
@@ -24,9 +26,9 @@
             position: absolute;
             z-index: 1;
         }
-        .control .color-block{
-            top: -70px;
-            right: 50px;
+        .odd .color-block{
+            top: -60px;
+            right:300px;
         }
         .pic{    
             position: relative;
@@ -38,9 +40,9 @@
             position: absolute;
             z-index: 3;    
         }
-        .control .title{
-            top: -100px;
-            left: -180px;
+        .odd .title{
+           top: -100px;
+           left: 170px;
         }
         .title .red{
             background-color: #bb0404;
@@ -63,54 +65,52 @@
         }
         .list{
             background-color: #eeeeee;
-            width: 700px;
-            padding: 20px;
+            width: 500px;
+            padding: 30px;
             position: absolute;
             z-index: 3;   
         }
-        .control .list{
-            left: -180px;
+        .odd .list{
+            left: 180px;
             top: 380px;     
         }
-        .control .list h3{
+        .odd .list h3{
             font-size: 20px;
             padding-bottom: 20px;
             color:#bb0404
         }
-        .control .list h4{
+        .odd .list h4{
             background-color: black;
             color: white;
             display: inline-block;
         }
         li{
-            text-indent: -1em;
+            font-size: 14px;
+            text-indent: -1.5em;
         }
         li::marker{ 
             color: #bb0404;
         }
-        .safe .pic{
-            /* left: -180px; */
-        }
-        .safe .title{
+        .even .title{
             top: -100px;
-            right: 50px;
+            right: 250px;
         }
-        .safe .color-block{
+        .even .color-block{
             width: 500px;
             height: 350px;
            top: -70px;
-           right: 200px;
+           right: 280px;
         }
-        .safe .list{
-            right: 50px;
+        .even .list{
+            right: 150px;
             bottom: -100px;
         }
-        .safe .list h3{
+        .even .list h3{
             font-size: 20px;
             padding-bottom: 20px;
             color:#bb0404
         }
-        .safe .list h4{
+        .even .list h4{
             background-color: black;
             color: white;
             display: inline-block;
@@ -120,7 +120,7 @@
 <body>
     <section>
         <div class="card">
-            <div class="control">
+            <div class="odd">
                 <div class="color-block"></div>
                 <div class="pic"><img src="../作業圖片/toyota/01.png" alt=""></div>
                 <div class="title">
@@ -145,7 +145,7 @@
             </div>
         </div>
         <div class="card">
-            <div class="safe">
+            <div class="even">
                 <div class="color-block"></div>
                 <div class="pic"><img src="../作業圖片/toyota/02.png" alt=""></div>
                 <div class="title">
@@ -167,9 +167,77 @@
                 </div>
             </div>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+            <div class="odd">
+                <div class="color-block"></div>
+                <div class="pic"><img src="../作業圖片/toyota/03.png" alt=""></div>
+                <div class="title">
+                    <div class="red">
+                        <h3>03</h3>
+                        <h2>乘坐舒適</h2>
+                    </div>
+                    <div class="text">
+                        <h3>令人放鬆舒適的車室空間</h3>
+                        <p>車室空間設計著重人體工學，透過方向盤，踏板等位置優化，追求更舒適的駕駛位置，並以新型座椅設計，提高座椅包覆性，致力實現長途駕駛疲勞的舒適駕馭體驗。</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <h3>因為我們做了這些革新</h3>
+                    <h4>駕駛位置最佳化</h4>
+                    <li>針對駕駛位置進行徹底的修改，讓駕駛者可如同握手般自然且舒適地操控方向盤。</li>
+                    <h4>駕馭視野佳</h4>
+                    <li>考量駕駛坐進車內的高度，透過前擋風玻璃位置的調整，達到盲區極小化，使駕駛視野更開闊，同步提升駕取安全。</li>
+                    <h4>更寧靜的車室</h4>
+                    <li>採用最新三層結構的隔音材料，與引擎，變速箱的零件改革，將座艙的震動抑制在最小限度，提供乘客舒適安靜的感受。</li>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="even">
+                <div class="color-block"></div>
+                <div class="pic"><img src="../作業圖片/toyota/04.png" alt=""></div>
+                <div class="title">
+                    <div class="red">
+                        <h3>04</h3>
+                        <h2>以人為本</h2>
+                    </div>
+                    <div class="text">
+                        <h3>使用者導向的貼心設計</h3>
+                        <p>藉由高度人性化的介面整合，傳遞車輛資訊，豐富日常駕駛體驗。從提升油耗表現到行李廂空間最適化，均細心考量，更加貼近使用者真正所需與習慣，並給予即時回應。</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <h3>因為我們做了這些革新</h3>
+                    <h4>優異油耗表現</h4>
+                    <li>以Corolla Sport為例，更強勁的高效引擎將熱效率提升至40％，達到世界級水準，屡屡突破燃油效率新境界。</li>
+                    <h4>行李箱空間最適化</h4>
+                    <li>以第四代Prius為例，透過將電池位置移到後座下方，讓行李箱擁有更大的空間。</li>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="odd">
+                <div class="color-block"></div>
+                <div class="pic"><img src="../作業圖片/toyota/05.png" alt=""></div>
+                <div class="title">
+                    <div class="red">
+                        <h3>05</h3>
+                        <h2>引以為傲</h2>
+                    </div>
+                    <div class="text">
+                        <h3>極具吸引力的精心設計</h3>
+                        <p>TNGA車款擁有讓人忍不住回頭的新潮外觀，讓駕駛充滿自信的駕馭快感！不僅讓車主能展現個人風格，能讓擁有者都能引以為傲。</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <h3>因為我們做了這些革新</h3>
+                    <h4>設計概念</h4>
+                    <li>TNGA低重心設計，不僅呈現更低伏的運動化外觀，更講究高品質內裝的一致性。</li>
+                    <h4>環保概念</h4>
+                    <li>為了對環境保護盡一份心力，我們全面提升傳統引擎，變速箱與油電複合動力的動力效能。</li>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 </html>
