@@ -11,9 +11,11 @@
             padding: 0;
         }
         .card{
-            width: 850px;
-            margin: 400px;
-            position: relative;
+            /* width: 695px; */
+            margin:400px ; 
+            position: relative;  
+            display: flex;
+            justify-content: center;
         }
         .color-block{
             background-color: #eeeeee;
@@ -26,12 +28,9 @@
             top: -70px;
             right: 50px;
         }
-        .pic{
+        .pic{    
             position: relative;
-            z-index: 2;
-        }
-        .contral .pic{
-            float: right;
+            z-index: 2;        
         }
         .title{
             width: 350px;
@@ -46,8 +45,7 @@
         .title .red{
             background-color: #bb0404;
             display: flex;
-            align-items: center;
-            
+            align-items: center;     
         }
         .title .red h3{
             font-size: 100px;
@@ -90,6 +88,33 @@
         li::marker{ 
             color: #bb0404;
         }
+        .safe .pic{
+            /* left: -180px; */
+        }
+        .safe .title{
+            top: -100px;
+            right: 50px;
+        }
+        .safe .color-block{
+            width: 500px;
+            height: 350px;
+           top: -70px;
+           right: 200px;
+        }
+        .safe .list{
+            right: 50px;
+            bottom: -100px;
+        }
+        .safe .list h3{
+            font-size: 20px;
+            padding-bottom: 20px;
+            color:#bb0404
+        }
+        .safe .list h4{
+            background-color: black;
+            color: white;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -119,7 +144,29 @@
                 </div>
             </div>
         </div>
-        <div class="card"></div>
+        <div class="card">
+            <div class="safe">
+                <div class="color-block"></div>
+                <div class="pic"><img src="../作業圖片/toyota/02.png" alt=""></div>
+                <div class="title">
+                    <div class="red">
+                        <h3>02</h3>
+                        <h2>安全守護</h2>
+                    </div>
+                    <div class="text">
+                        <h3>行車更安心的高剛性車體</h3>
+                        <p>您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程，毫無後顧之憂。</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <h3>因為我們做了這些革新</h3>
+                    <h4>主動安全</h4>
+                    <li>可以先進的TSS系統主動偵測路況，輔助駕駛判斷路況並維持行車安全。</li>
+                    <h4>被動安全</h4>
+                    <li>堅固的高剛性車體，使用熱沖壓材料的高強度抗扭鋼板，強化座艙對意外事故的保護力。</li>
+                </div>
+            </div>
+        </div>
         <div class="card"></div>
         <div class="card"></div>
         <div class="card"></div>
