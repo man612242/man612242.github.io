@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1A2B猜數字</h1>
+    <label for="guessinput">輸入不重複的四個數字:</label>
+    <input type="text" id="guessinput">
+    <button onclick="guess()" id="guessbtn">猜</button>
+
+    <p id="result"></p>
+
+
+    <p id="answer"></p>
+
+    <button>重新開始</button>
+
+    <button onclick="showAnswer()" id="checkanswer">偷看答案</button>
+
+
+    <h2>歷史紀錄</h2>
+    <ul id="history"></ul>
+    <script>
+        //生成隨機答案
+        function createAnswer() {
+            let list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+            let answer = [];
+            for (let i = 0; i < 4; i++) {
+                let random = Math.floor(Math.random() * list.length);
+                answer.push(list[random]);
+                list.splice(random, 1);
+            }
+            return answer;
+        }
+
+        let answer = createAnswer();
+        let answerCount = 0;
+        let history = [];
+
+        function toNumberArray(number) {
+            return number.toString().split("").map(Number);
+        };
+
+        function checkAnswer(guess) {
+            let guessArray = toNumberArray(guess);
+            let answerArray = answer.slice();
+
+            let a = 0;
+            let b = 0;
+
+            for (let i = 0; i < guessArray.length; i++) {
+                if (guessArray[i] == answerArray[i]) {
+                    a++;
+                    guessArray[i] = "X";
+                    answerArray[i] = "X";
+                }
+                else if (guessArray[i] != "X") {
+                    let index = answerArray.indexOf(guessArray[i]);
+                    if (index > -1) {
+                        b++;
+                        answerArray[index] = "X";
+                    }
+                }
+            }
+            return [a, b];
+        }
+
+        function guess() {
+            let guessInput = document.getElementById("guessinput");
+            let guessValue = guessInput.value;
+            guessInput.value = "";
+
+            let result = document.getElementById("result");
+
+            if (guessValue.length !== 4 || isNaN(guessValue)) {
+                window.alert("請輸入四個不重複的數字")
+                return;
+            }
+
+            let guessResult = checkAnswer(guessValue);
+            answerCount++;
+
+            if (guessResult[0] === 4) {
+                window.alert(`恭喜你答對了!答案是 ${answer.join("")}  你總共猜了 ${answerCount}次`)
+                document.getElementById("guessinput").disabled = true;
+                document.getElementById("guessbtn").disabled = true;
+                document.getElementById("checkanswer").disabled = true;
+                return;
+            }
+
+            result.innerHTML = guessValue + " - " + guessResult[0] + "A" + guessResult[1] + "B";
+
+            var history = document.getElementById("history");
+            var listItem = document.createElement("li");
+            listItem.innerText = guessValue + " - " + guessResult[0] + "A" + guessResult[1] + "B";
+            history.appendChild(listItem);
+        }
+
+        function showAnswer(){
+            window.alert(`答案是 ${answer.join("")}`);
+        }
+        function restart(){
+            
+        }
+
+    </script>
+</body>
+
+</html>
