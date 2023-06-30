@@ -5,26 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+        li {
+            list-style: none;
+        }
+        .game{
+            width: 250px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>1A2B猜數字</h1>
-    <label for="guessinput">輸入不重複的四個數字:</label>
-    <input type="text" id="guessinput">
-    <button onclick="guess()" id="guessbtn">猜</button>
+    <div class="game">
+        <h1>1A2B猜數字</h1>
+        <label for="guessinput">輸入不重複的四個數字:</label>
+        <input type="text" id="guessinput">
+        <button onclick="guess()" id="guessbtn">猜</button>
 
-    <p id="result"></p>
-
-
-    <p id="answer"></p>
-
-    <button>重新開始</button>
-
-    <button onclick="showAnswer()" id="checkanswer">偷看答案</button>
+        <p id="result"></p>
 
 
-    <h2>歷史紀錄</h2>
-    <ul id="history"></ul>
+        <p id="answer"></p>
+
+        <button onclick="restart()">重新開始</button>
+
+        <button onclick="showAnswer()" id="checkanswer">看答案</button>
+
+
+        <h2>歷史紀錄</h2>
+        <ul id="history"></ul>
+    </div>
     <script>
         //生成隨機答案
         function createAnswer() {
@@ -101,11 +113,27 @@
             history.appendChild(listItem);
         }
 
-        function showAnswer(){
+        function showAnswer() {
             window.alert(`答案是 ${answer.join("")}`);
         }
-        function restart(){
-            
+        function restart() {
+
+            answer = createAnswer();
+            attempts = 0;
+            history = [];
+
+
+            document.getElementById("result").innerHTML = "";
+            document.getElementById("history").innerHTML = "";
+
+
+            document.getElementById("guessinput").disabled = false;
+            document.getElementById("guessbtn").disabled = false;
+            document.getElementById("checkanswer").disabled = false;
+
+
+            document.getElementById("answer").innerText = "";
+            document.getElementById("answer").style.display = "none";
         }
 
     </script>
