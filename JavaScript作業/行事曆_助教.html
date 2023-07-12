@@ -392,7 +392,8 @@
                     // i=0 表示第一週
                     if (i === 0 && j < dayOfMonth) {  // 第一天 6
 
-                        tdDOM.innerText = new Date(year, month, 0).getDate() - dayOfMonth + j + 1
+                        tdDOM.innerText = new Date(year, month, 0).getDate() - dayOfMonth + j + 1;
+                        tdDOM.classList.add('text-muted');
 
                     } else {
 
@@ -437,6 +438,7 @@
                         } else {
                             tdDOM.innerText = day - dateOfMonth;
                             day++;
+                            tdDOM.classList.add('text-muted');
                         }
                     }
                     trDOM.append(tdDOM)
