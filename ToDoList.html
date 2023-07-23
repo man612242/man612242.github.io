@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>待辦清單</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .container {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <div class="container">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control text-input" placeholder="輸入待辦事項" aria-label="輸入待辦事項"
+                aria-describedby="button-addon">
+            <button class="btn btn-outline-secondary btn-primary add-btn" type="button" id="button-addon"
+                style="color: white;">新增</button>
+        </div>
+    </div>
+
+    <div class="list">
+    </div>
+
+    <script>
+        let addButton = document.querySelector(".add-btn");
+        let inputDom = document.querySelector(".text-input");
+        let list = document.querySelector(".list");
+        let inputElement = document.querySelector(".form-control");
+
+        window.onload = function () {
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+                let data = getLocalStorage(key);
+                if (data !== null) {
+                    data.forEach(item => {
+                        addTodoItem(item.title, key);
+                    });
+                }
+            }
+        };
+
+
+
+        addButton.addEventListener("click", function () {
+            let inputValue = inputDom.value;
+            let now = new Date();
+
+            let year = now.getFullYear();
+            let month = String(now.getMonth() + 1).padStart(2, '0');
+            let date = String(now.getDate()).padStart(2, '0');
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+
+            let combinedVariable = `${year}${month}${date}${hours}${minutes}${seconds}`;
+
+            let key = combinedVariable;
+            let obj = {
+                title: inputValue,
+                completed: false
+            };
+            let dataArray = [];
+            let data = getLocalStorage(key);
+            if (data == null) {
+                dataArray.push(obj);
+            } else {
+                dataArray = data;
+                dataArray.push(obj);
+            }
+
+            setLocalStorage(key, dataArray);
+
+            addTodoItem(inputValue, key);
+
+            inputElement.disabled = false;
+            inputDom.value = '';
+        });
+
+        function addTodoItem(title, key) {
+            let listItem = document.createElement("div");
+            listItem.innerHTML =
+                `
+                <div class="container d-flex" style="border: 1px solid black;">
+                 <div class="input-group mb-3 mt-3">
+                     <div class="input-group-text">
+                         <input class="form-check-input mt-0 checkbox" type="checkbox" value=""
+                             aria-label="Checkbox for following text input">
+                     </div>
+                     <input type="text" class="form-control" aria-label="Text input with checkbox" value="${title}" disabled=true>
+                     <div class="setbutton " style="margin-left: 5px;">
+                         <button type="button" class="btn btn-success save-btn d-none">保存</button>
+                         <button type="button" class="btn btn-warning edit-btn">編輯</button>
+                         <button type="button" class="btn btn-danger delete-btn" data-key="${key}">刪除</button>
+                     </div>
+                 </div>
+             </div>
+            `;
+            list.append(listItem);
+
+            
+            let deleteButton = listItem.querySelector(".delete-btn");
+            deleteButton.addEventListener("click", function () {
+                let key = this.getAttribute("data-key");
+                removeTodoItem(key);
+                listItem.remove();
+            });
+
+            
+            let editButton = listItem.querySelector(".edit-btn");
+            let inputElement = listItem.querySelector(".form-control");
+            let saveButton = listItem.querySelector(".save-btn");
+
+            editButton.addEventListener("click", function () {
+                inputElement.disabled = false;
+                editButton.classList.add("d-none");
+                saveButton.classList.remove("d-none");
+            });
+
+            
+            saveButton.addEventListener("click", function () {
+                let key = this.parentElement.parentElement.parentElement.querySelector(".delete-btn").getAttribute("data-key");
+                let data = getLocalStorage(key);
+                if (data !== null) {
+                    data[data.length - 1].title = inputElement.value;
+                    setLocalStorage(key, data);
+                }
+                inputElement.disabled = true;
+                saveButton.classList.add("d-none");
+                editButton.classList.remove("d-none");
+            });
+
+            
+            let checkbox = listItem.querySelector(".checkbox");
+            checkbox.addEventListener("click", function () {
+                let key = listItem.querySelector(".delete-btn").getAttribute("data-key");
+                let data = getLocalStorage(key);
+                if (data !== null) {
+                    data[data.length - 1].completed = checkbox.checked;
+                    setLocalStorage(key, data);
+                }
+            });
+
+            
+            let data = getLocalStorage(key);
+            if (data !== null) {
+                data.forEach(item => {
+                    if (item.completed == true) {
+                        checkbox.checked = true;
+                    }
+                });
+            }
+        }
+
+        function removeTodoItem(key) {
+            let data = getLocalStorage(key);
+            if (data !== null) {
+                data.pop();
+                setLocalStorage(key, data);
+            }
+        }
+
+        function getLocalStorage(key) {
+            let data = JSON.parse(localStorage.getItem(key));
+            return data;
+        }
+
+        function setLocalStorage(key, value) {
+            localStorage.setItem(key, JSON.stringify(value));
+        }
+       
+    </script>
+</body>
+
+</html>
